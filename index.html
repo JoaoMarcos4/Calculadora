@@ -7,26 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- TITLE -->
-    <title>Calculadora | DevBSB</title>
+    <title>Calculadora</title>
 
-    <!-- SEO TAGS -->
-    <meta name="description"
-        content="Uma simples calculadora com funções báricas: adição, subtração, multiplicação e divisão, desenvolvida em HMTL, CSS e Javascript." />
-    <meta name="keywords"
-        content="calculadora, devbsb, html, css, javascript, animation, adição, subtração, multiplicação, divisão, projeto" />
-    <meta name="robots" content="" />
-    <meta name="revisit-after" content="1 day" />
-    <meta name="language" content="Portuguese" />
-    <meta name="generator" content="N/A" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="img/logo.jpeg" type="image/x-icon" />
 
-    <!-- FAVICON -->
-    <link rel="icon" href="/img/favicon.ico" />
-
-    <!-- FONT ROTOBO -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-
-    <!-- STYLE CSS -->
     <link href="style.css" rel="stylesheet" />
 </head>
 
@@ -35,58 +19,94 @@
     <!-- CALCULATOR -->
     <div class="calculator">
 
+        <h1>Calculadora de Bases Numéricas</h1>
+
         <!-- DISPLAY -->
         <div class="display">
             <input id="display" placeholder="0" disabled>
             <h2 id="history"></h2>
+            <h2 id="conversion"></h2>
         </div>
 
         <!-- <BUTTONS -->
         <div class="row">
-            <button class="button purple-text" onclick="limpar()">AC</button>
-            <div></div>
-            <div></div>
+            <button class="button" onclick="convert_base(2)">bin</button>
+            <button class="button" onclick="convert_base(8)">oct</button>
+            <button class="button" onclick="convert_base(10)">dec</button>
+            <button class="button" onclick="convert_base(16)">hex</button>
             <button class="button gray" onclick="add_operador('/')">/</button>
+            <button class="button purple-text" onclick="limpar()">AC</button>
         </div>
 
         <div class="row">
-            <button class="button" onclick="add_numero(7)">7</button>
-            <button class="button" onclick="add_numero(8)">8</button>
-            <button class="button" onclick="add_numero(9)">9</button>
+            <button class="button" onclick="add_numero('C')">C</button>
+            <button class="button" onclick="add_numero('D')">D</button>
+            <button class="button" onclick="add_numero('E')">E</button>
+            <button class="button" onclick="add_numero('F')">F</button>
             <button class="button gray" onclick="add_operador('*')">*</button>
+            <button class="button gray" onclick="add_numero('(')">(</button>
         </div>
 
         <div class="row">
-            <button class="button" onclick="add_numero(4)">4</button>
-            <button class="button" onclick="add_numero(5)">5</button>
-            <button class="button" onclick="add_numero(6)">6</button>
+            <button class="button" onclick="add_numero('8')">8</button>
+            <button class="button" onclick="add_numero('9')">9</button>
+            <button class="button" onclick="add_numero('A')">A</button>
+            <button class="button" onclick="add_numero('B')">B</button>
+            <button class="button gray" onclick="add_operador('*')">*</button>
+            <button class="button gray" onclick="add_operador(')')">)</button>
+        </div>
+
+        <div class="row">
+            <button class="button" onclick="add_numero('4')">4</button>
+            <button class="button" onclick="add_numero('5')">5</button>
+            <button class="button" onclick="add_numero('6')">6</button>
+            <button class="button" onclick="add_numero('7')">7</button>
             <button class="button gray" onclick="add_operador('-')">-</button>
+            <button class="button gray" onclick="add_numero('.')">.</button>
         </div>
 
         <div class="row">
-            <button class="button" onclick="add_numero(1)">1</button>
-            <button class="button" onclick="add_numero(2)">2</button>
-            <button class="button" onclick="add_numero(3)">3</button>
+            <button class="button" onclick="add_numero('0')">0</button>
+            <button class="button" onclick="add_numero('1')">1</button>
+            <button class="button" onclick="add_numero('2')">2</button>
+            <button class="button" onclick="add_numero('3')">3</button>
             <button class="button gray" onclick="add_operador('+')">+</button>
-        </div>
-
-        <div class="row">
-            <div></div>
-            <button class="button" onclick="add_numero(0)">0</button>
-            <button class="button" onclick="add_numero('.')">.</button>
             <button class="button purple" onclick="total()">=</button>
         </div>
-        <!-- BUTTONS/> -->
     </div>
 
-    <!-- LINK TO GITHUB PROJECT -->
-    <div class="github">
-        <a href="https://github.com/iaematt/calculator" target="_blank" title="Code in GitHub">
-            <img src="/img/github.svg" width="35" />
-        </a>
+    <div class="container_instruçoes">
+        <h1>Manual de Instruções: Calculadora de Bases Numéricas</h1>
+            <p>
+                Use apenas os botões da tela para digitar. O teclado do seu computador está desativado para este display.
+            </p>
+
+            <h2>Conversão de Base</h2>
+            <p>
+                Digite no formato: <strong>número(base_origem)</strong>. Exemplo: 1010(2) para binário ou A(16) para
+                hexadecimal.
+            </p>
+            <p>
+                Em seguida, clique em um dos botões do topo (bin, oct, dec, hex) para ver o resultado da conversão abaixo
+                do display.
+            </p>
+
+            <h2>Contas Matemáticas</h2>
+            <p>
+                As operações ocorrem somente entre números na base decimal.
+            </p>
+            <p>
+                Digite o primeiro número, escolha a operação (+, -, *, /), digite o segundo número e clique em = para
+                calcular.
+            </p>
+
+            <h2>Limpar Tela</h2>
+            <p>
+                Clique no botão <strong>AC</strong> a qualquer momento para apagar todo o display e resetar o histórico.
+            </p>
+
     </div>
 
-    <!-- SCRIPTS -->
     <script type="text/javascript" src="script.js"></script>
 
 </body>

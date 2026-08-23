@@ -75,3 +75,37 @@ function total() {
     parar = true;
   }
 }
+
+function change_base() {
+  numeros = input.value.split("(");
+  let resultado = [];
+
+  if (numeros.length === 2) {
+    let numero = numeros[0];
+    let base_atual = numeros[1].replace(")", "");
+
+    resultado.push(true, numero, base_atual);
+  } else {
+    resultado.push(false);
+  } 
+
+  return resultado;
+}
+
+function convert_base(value) {
+  let entrada = document.querySelector("#display").value;
+
+  let resultado = change_base();
+
+  if (resultado) {
+    let numero = resultado[1];
+    let base_atual = resultado[2];
+
+    let decimal = parseInt(numero, base_atual);
+    let convertido = decimal.toString(value);
+
+    document.querySelector("#conversion").innerHTML = `${numero}(${base_atual}) = ${convertido}(${value})`;
+  } else {
+    document.querySelector("#conversion").innerHTML = "Formato inválido. Use o formato: número(base)";
+  }
+}
