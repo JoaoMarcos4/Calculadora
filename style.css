@@ -137,3 +137,22 @@ body {
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) { 
+  body { 
+    flex-direction: column; 
+    height: auto;
+    padding: 10px;
+  } 
+  
+  .calculator { 
+    width: 100%; 
+    border-width: 10px; 
+  } 
+  
+  .container_instruçoes { 
+    margin-left: 0; 
+    margin-top: 20px; 
+    width: 100%; 
+  } 
+}
